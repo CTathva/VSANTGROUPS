@@ -1,0 +1,653 @@
+/**********************************************************************
+***********************************************************************
+  DESIGN: DESKTOP
+***********************************************************************
+**********************************************************************/
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+  .content{
+    position: relative;
+    width: 100%;
+    margin-top: -6.7%;
+    height: auto;
+  }
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    height: 600px;
+    margin: auto;
+  }
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #53BDED;
+    width: 70px;
+    position: absolute;
+    margin: 15% auto 0 47%;
+    height: 70px;
+    -webkit-animation: spin 700ms linear infinite; /* Safari */
+    animation: spin 700ms linear infinite;
+  }
+  .mySlides {
+    display: none;
+  }
+  .mySlides img{
+    filter: brightness(50%);
+  }
+  .mySlides .mobile{
+    display: none;
+  }
+  .mySlides .pc{
+    display: block;
+  }
+  .cap {
+    color: #fff;
+    font-size: 400%;
+    margin: 15% 10% 0 10%;
+    position: absolute;
+    top: 8px;
+    width: auto;
+  }
+  .tag {
+    color: #fff;
+    font-size: 150%;
+    margin: 27% 0 0 10%;
+    position: absolute;
+    top: 8px;
+    width: auto;
+  }
+  
+  .butt{
+    color: #142230;
+    background-color: #fff;
+    border: #fff 1px solid;
+    padding: 1% 3% 1% 3%;
+    position: absolute;
+    top: 8px;
+    text-align: center;
+    margin: 35% 0 0 10%;
+    font-weight: bold;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    width: auto;
+    font-size: 100%;
+  }
+  
+  .butt:hover{
+    color: #fff;
+    cursor: pointer;
+    background-color: #142230;
+    border: #fff 1px solid;
+  }
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+ 
+  .dot {
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 0.5% 0 0.5%;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .dot-container{
+    padding: 8px 12px;
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+  }
+  .overlay-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,255,0.1);
+  }
+  .active, .dot:hover {
+    background-color: #fff;
+  }
+  
+  .our-clients{
+    width: 100%;
+    padding: 2%;
+    margin-top: 1%;
+    background-color: #fff;
+  }
+
+  .our-clients p{
+    color: #142230;
+    margin: 2% 0 2% 10%;
+    font-size: 150%;
+  }
+  .our-clients h1{
+    color: #142230;
+    margin: 2% 0 2% 10%;
+    font-size: 200%;
+  }
+
+  .our-clients .marker{
+    width: 7%;
+    height: 6px;
+    margin: 1% 0 0 10%;
+    padding: none;
+    background-color: #0f4d92;
+    color: #0f4d92;
+  }
+
+  .slider-layout {
+    width: 85%;
+    display: grid;
+    margin: 1% 0 0 10%;
+    grid-template-columns: repeat(5, 1fr);
+}
+.slider{
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  border: 0.1px solid #eee;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.slider img{
+  margin-top: 22.5px;
+  width: 115px;
+  height: 115px;
+}
+
+
+  .our-company{
+    display: none;
+  }
+
+  .events{
+    width: 100%;
+    padding: 2%;
+    margin-top: 5%;
+    background-color: #fff;
+  }
+
+  .events h1{
+    color: #142230;
+    margin: 2% 0 2% 10%;
+    font-size: 200%;
+  }
+
+  .events .marker{
+    width: 7%;
+    height: 6px;
+    margin: 4% 0 0 10%;
+    padding: none;
+    background-color: #0f4d92;
+    color: #0f4d92;
+  }
+
+  .events-grid{
+    width: 100%;
+    display: grid;
+    gap: 2%;
+    padding: 0 10%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .events-grid-card{
+    height: 350px;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  }
+
+  .events-grid-card:hover{
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    cursor: pointer;
+    scale: 105%;
+    transition: 0.5s;
+  }
+
+  .events-grid-card img{
+    width:300px;
+  }
+
+  .events-grid-card h2{
+    font-size: 125%;
+    color: #142230;
+    margin: -10% 0 10% 0;
+
+  }
+
+  .testimonials{
+    width: 100%;
+    padding: 2%;
+    margin-top: 1%;
+    background-color: #142230;
+  }
+
+  .tes-grid{
+    width: 100%;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    padding: 0% 10%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials h1{
+    color: #fff;
+    margin: 2% 0 1% 10%;
+    font-size: 200%;
+  }
+
+  .testimonials .marker{
+    width: 7%;
+    height: 6px;
+    margin: 4% 0 0 10%;
+    padding: none;
+    background-color: #fff;
+    color: #fff;
+  }
+
+  .tes-card{
+    align-items: center;
+    padding: 20%;
+    text-align: center;
+  }
+  .tes-card h3{
+    color: #fff;
+    margin-top: 2%;
+    font-size: 200%;
+  }
+  .tes-card img{
+    width: 35%;
+    filter: invert(1);
+  }
+  .tes-card p{
+    color: #fff;
+    margin-top: 2%;
+  }
+
+  
+
+
+
+/**********************************************************************
+***********************************************************************
+  DESIGN: MOBILE
+***********************************************************************
+**********************************************************************/
+
+  
+@media screen and (max-width: 420px) {
+    *{
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+    .content{
+      position: relative;
+      width: 100%;
+      margin-top: -20%;
+      height: auto;
+    }
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      height: 495px;
+      margin: auto;
+    }
+    .loader {
+      border: 7px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 7px solid #53BDED;
+      width: 50px;
+      position: absolute;
+      margin: 65% auto 0 45%;
+      height: 50px;
+      -webkit-animation: spin 700ms linear infinite; /* Safari */
+      animation: spin 700ms linear infinite;
+    }
+  
+    .mySlides {
+      display: none;
+    }
+   
+    .mySlides .mobile{
+      display: block;
+      filter: brightness(50%);
+    }
+    .mySlides .pc{
+      display: none;
+    }
+    .cap {
+      color: #fff;
+      font-size: 250%;
+      margin: 20% 10% 0 10%;
+      position: absolute;
+      width: auto;
+    }
+    .tag {
+      color: #fff;
+      font-size: 120%;
+      margin: 80% 0 0 10%;
+      position: absolute;
+      top: 8px;
+      width: auto;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: auto;
+      margin-top: -22px;
+      cursor: default;
+      padding: 16px;
+      color: #eee;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    .butt{
+      color: #142230;
+      background-color: #fff;
+      border: #fff 1px solid;
+      padding: 2% 3% 2% 3%;
+      position: absolute;
+      top: 8px;
+      z-index: 300;
+      text-align: center;
+      margin: 100% 0 0 10%;
+      font-weight: bold;
+      transition: 0.3s;
+      font-size: 80%;
+      letter-spacing: 2px;
+      width: auto;
+      user-select: none;
+    }
+    
+    .butt:hover{
+      color: #fff;
+      background-color: #142230;
+      border: #fff 1px solid;
+    }
+   
+   
+    .dot {
+      height: 7px;
+      width: 7px;
+      margin: 0 0.5% 0 0.5%;
+      background-color: gray;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .dot:hover {
+
+      background-color: gray;
+
+    }
+    .dot-container{
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .overlay-container{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,255,0.1);
+    }
+    .active {
+      background-color: #fff;
+    }
+    .our-clients{
+      width: 100%;
+      padding: 2%;
+      background-color: #fff;
+    }
+
+    
+    .our-clients h1{
+      color: #142230;
+      margin: 2% 9% 2% 10%;
+      font-size: 175%;
+    }
+    
+ 
+    .our-clients .marker{
+      width: 20%;
+      height: 6px;
+      margin: 10% 0 7% 10%;
+      padding: none;
+      background-color: #0f4d92;
+      color: #0f4d92;
+    }
+
+    .slider-layout {
+      width: 80%;
+      display: grid;
+      margin: 5% 0 0 10%;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .slider{
+    height: 140px;
+    width: 140px;
+    text-align: center;
+    border: 0.1px solid #eee;
+    margin-bottom: 3px;
+    align-items: center;
+  }
+  
+  .slider img{
+    margin-top: 25px;
+    width: 90px;
+    height: 90px;
+  }
+  
+      
+    .our-company{
+      display: block;
+      width: 100%;
+      background-color: #142230;
+      height: auto;
+      margin-top: -4.5%;
+      margin-bottom: 2%;
+      padding: 2%;
+    }
+
+    .our-company .marker{
+      width: 20%;
+      height: 6px;
+      margin: 10% 0 7% 10%;
+      padding: none;
+      background-color: #fff;
+      color: #fff;
+    }
+    
+    .our-company h1{
+      color: #fff;
+      font-weight: bold;
+      margin: 2% 0 2% 10%;
+      font-size: 175%;
+    }
+
+    .pointer-cont{
+      width: auto;
+      color: #142230;
+      margin: -2% 10% 4% 10%;
+    }
+    .pointer {
+      width: 90%;
+      height: 40px;
+      margin-bottom: 5%;
+      display: flex;
+      justify-content: left;
+      position: relative;
+      background: #fff;
+    }
+    .pointer h2{
+      color: #142230;
+      margin-top: 4%;
+      font-weight: bold;
+    }
+
+    .pointer:before {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 20px solid #fff;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+    
+    .events{
+      width: 100%;
+      padding: 2%;
+      margin-top: 1%;
+      background-color: #fff;
+    }
+  
+    .events h1{
+      color: #142230;
+      font-weight: bold;
+      margin: 2% 0 2% 10%;
+      font-size: 175%;
+    }
+  
+    .events .marker{
+      width: 20%;
+      height: 6px;
+      margin: 10% 0 7% 10%;
+      padding: none;
+      background-color: #0f4d92;
+      color: #0f4d92;
+    }
+  
+    .events-grid{
+      width: 100%;
+      padding: 0 5% 20% 5%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .events-grid-card{
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      text-align: center;
+      align-items: center;
+      box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    }
+  
+    .events-grid-card:hover{
+      box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+      cursor: pointer;
+      scale: 105%;
+      transition: 0.5s;
+    }
+  
+    .events-grid-card img{
+      width:100%;
+    }
+  
+    .events-grid-card h2{
+      font-size: 125%;
+      margin: -10% 0 10% 0;
+      color: #142230;
+    }
+  
+    .testimonials{
+      width: 100%;
+      padding: 2%;
+      margin-top: 1%;
+      background-color: #142230;
+    }
+  
+    .tes-grid{
+      width: 100%;
+      display: grid;
+      text-align: center;
+      align-items: center;
+      padding: 0% 10% 10% 10%;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .testimonials h1{
+      color: #fff;
+      font-weight: bold;
+      margin: 2% 0 2% 10%;
+      font-size: 175%;
+    }
+  
+    .testimonials .marker{
+      width: 20%;
+      height: 6px;
+      margin: 10% 0 7% 10%;
+      padding: none;
+      background-color: #fff;
+      color: #fff;
+    }
+  
+    .tes-card{
+      align-items: center;
+      padding: 10% 5%;
+      border: 0.1px solid #ddd;
+      background-color: #fff;
+      text-align: center;
+    }
+    .tes-card h3{
+      color: #142230;
+      margin-top: 2%;
+      font-size: 125%;
+    }
+    .tes-card img{
+      width: 25%;
+      filter: invert(21%) sepia(95%) saturate(1238%) hue-rotate(190deg) brightness(94%) contrast(94%);
+    }
+    .tes-card p{
+      color: #142230;
+      font-size: 80%;
+      margin-top: 2%;
+    }
+  
+    
+
+  }
+  
